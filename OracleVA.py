@@ -18,13 +18,13 @@ def wishMe():   #wishes according to time
     hour = int(datetime.datetime.now().hour)
     #print(hour) 
     if hour >= 0 and hour < 12:
-        speak("Good Morning!. How may help you, sir?")
+        speak("Good Morning!. How may help you?")
     elif hour >= 12 and hour < 18:
-        speak("Good Afternoon! How may help you, sir?")
+        speak("Good Afternoon! How may help you?")
     elif hour >= 18 and hour < 21:
-        speak("Good Evening! How may help you, sir?")
+        speak("Good Evening! How may help you?")
     else:
-        speak("Good Night! How may help you, sir?")
+        speak("Good Night! How may help you?")
     
 
 def takeCommand():      #takes microphone input and returns strings
@@ -74,14 +74,19 @@ if __name__ == "__main__":
             speak("Opening Visual Studio Code")
             os.startfile(codePath)
         elif 'oracle' in query or 'who are you' in query:
-            text = "I am Oracle. I have been developed by Samiruddin Thunder. I am built upon Python. I am here to help you. How may I help you, sir?"
+            text = "I am Oracle. I have been developed by Samiruddin Thunder. I am built upon Python. I am here to help you. How may I help you?"
             speak(text)
         elif 'what can you do' in query or 'can do' in query:
-            text = "I can open youtube, google.com, gmail for you. I can play music for you. I can open Visual Studio Code and tell the time and date for you. How may I help you, sir?"
+            text = "I can open youtube, google.com, gmail for you. I can play music for you. I can open Visual Studio Code and tell the time and date for you. How may I help you?"
+            speak(text)
+        elif 'thank you' in query:
+            text = "It's my pleasure to help you."
             speak(text)
         elif 'quit' in query or 'shutdown' in query or 'sleep' in query:
-            speak("Goodbye, Sir")
+            speak("Goodbye")
             quit()
+        else:
+            speak("Sorry I can't do it.")
 
 input()
 
